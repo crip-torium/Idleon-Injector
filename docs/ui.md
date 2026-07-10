@@ -141,6 +141,20 @@ Save behavior:
 - Rows render number inputs, boolean toggles, or raw JSON based on value type.
 - Each "SET" writes to memory via `/api/options-account/index` with optimistic updates.
 
+The top-level Account navigation also includes dedicated pages for upgrade vault data, tasks, cards, and each game
+world. The Cards page reads the live account collection from `Cards[0].h` and groups Account Cards by the 13
+game-authored regions in `cList.CardStuff`.
+
+Cards page behavior:
+
+- Regions start collapsed, can be opened independently, and retain their open state during manual refreshes.
+- Rows show the monster display name, internal ID, current tier, next tier requirement, and editable raw Card Amount.
+- Tier pickers write the exact card-specific minimum for tiers 1 through 6.
+- Region headers provide confirmed bulk tier writes for that region only.
+- Live Account Cards whose definition or monster name cannot be resolved remain editable in an Unresolved Cards
+  section, with tier actions disabled.
+- Individual and bulk writes use the shared verified GGA write helpers and reload live values after a failed bulk write.
+
 ### Search view
 
 `src/ui/components/views/Search.js` provides a tool for finding values in the game's internal data (`gga`).
