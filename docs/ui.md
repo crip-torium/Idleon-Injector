@@ -152,7 +152,7 @@ Cards page behavior:
   current tier, next tier requirement, and editable raw Card Amount.
 - Definitions absent from the live account collection display a Card Amount of `0` and remain editable.
 - Tier pickers write the exact card-specific minimum for tiers 1 through 6.
-- Region headers provide confirmed bulk tier writes for that region only.
+- Region headers provide bulk tier writes for that region only.
 - Live Account Cards whose definition or monster name cannot be resolved remain editable in an Unresolved Cards
   section, with tier actions disabled.
 - Individual and bulk writes use the shared verified GGA write helpers and reload live values after a failed bulk write.
